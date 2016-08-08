@@ -3,18 +3,28 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $border-color: #eaeaea;
-
+$color: #90949c;
+$color-menu: #00897b;
+$color-shadow: #888888;
 body {
   margin-top: 60px;
   background-color: #e9ebee;
   width: 100%;
   height: 100%;
 }
-h1 {
-  color : #90949c;
+h1, h3 {
+  color: $color;
+}
+h6 {
+  display: inline;
+  color: $color;
+}
+.color-red {
+  color: red;
 }
 .main-content {
   background-color: white;
+  box-shadow: 2px 2px 3px $color-shadow;
 }
 /*header*/
 #logo {
@@ -29,7 +39,9 @@ h1 {
   height: 30px;
 }
 .navbar-default {
-  background-color: #00897b;
+  background-color: $color-menu;
+  border-color: $color-menu;
+  box-shadow: 3px 3px 3px $color-shadow;
 }
 .navbar-default a {
   text-decoration: none;
@@ -42,6 +54,45 @@ h1 {
   background-color: #004D40;
 }
 
+/*form-login*/
+#form-login {
+  position: absolute;
+  width: 300px;
+  right: 0px;
+  top: 50px;
+  text-align: center;
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: none;
+  border : 2px solid $border-color;
+  border-radius : 10px;
+  box-shadow: 2px 2px 3px $color-shadow;
+}
+#form-login .col-lg-12 {
+  padding: 0px;
+  margin-top: 5px;
+}
+.menu-dropdown {
+  position: absolute;
+  right: 0px;
+  width: 150px;
+  list-style: none;
+  display: none;
+  background-color: $color-menu;
+  padding: 0px;
+}
+.menu-dropdown li {
+  padding: 10px;
+}
+.menu-dropdown li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#menu-top li:hover .menu-dropdown {
+  display: block;
+}
 /*footer*/
 footer {
   color: #E0E0E0;
@@ -59,4 +110,9 @@ footer {
 }
 .padding-twenty {
   padding: 20px;
+}
+.btn-home {
+  padding: 20px;
+  font-size: 20px;
+  box-shadow: 2px 2px 3px $color-shadow;
 }

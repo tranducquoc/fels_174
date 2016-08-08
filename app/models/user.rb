@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  attr_accessor :remember_token
   has_many :activities, dependent: :destroy
   has_many :active_relationships, class_name: Relationship.name,
     foreign_key: :follower_id, dependent: :destroy
@@ -23,15 +24,24 @@ class User < ActiveRecord::Base
       BCrypt::Engine.cost
       BCrypt::Password.create(string, cost: cost)
     end
+
+    def new_token
+      SecureRandom.urlsafe_base64
+    end
   end
 
-  def remember
+  def cookies_remember
     self.remember_token = User.new_token
-    update_attributes :remember_digest, User.digest(remember_token)
+    update_attribute :remember_digest, User.digest(remember_token)
   end
 
-  def activate
-    update_attributes :activated, true, :activated_at, Time.zone.now
+  def cookies_forget
+    update_attribute :remember_digest, nil
+  end
+
+  def cookies_authenticated? remember_token
+    return false if remember_digest.nil?
+    BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
 
   private

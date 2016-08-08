@@ -9,5 +9,6 @@ class CreateUsers < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_column :users, :remember_digest, :string
   end
 end
