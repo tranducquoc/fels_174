@@ -4,7 +4,17 @@ en:
     logo: " E-Learning System"
     home: "Home"
     signup: "Sign up"
+    signin: "Sign in"
+    signout: "Sign out"
     login : "Login"
+    remember: "remember me on this computer"
+    placeholder:
+      email : "Enter your email..."
+      pass : "Enter your password..."
+  login:
+    success: "success"
+    failed: "failed"
+    message-error: "Email or password is wrong !"
   footer:
     infor: "Framgia E-Learning system"
   home:
