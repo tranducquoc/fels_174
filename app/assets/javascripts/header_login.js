@@ -17,16 +17,16 @@ $("#btnLogin").on("click",function(){
     success: function(response){
       var result =  response.result;
       if("success" === result){
-        location.reload();
+        var user = response.user;
+        window.location.href = "/users/"+user.id;
       }
       else {
         $("#message-err").html(""+response.message);
       }
     },
     error: function(error_message){
-      alert("error: "+error_message);
+      alert("error: "+ error_message);
     }
   });
 });
-
 
