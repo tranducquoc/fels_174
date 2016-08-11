@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
   before_save :downcase_email
   has_secure_password
 
+  default_scope {order("created_at DESC")}
+
   class << self
     def digest string
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

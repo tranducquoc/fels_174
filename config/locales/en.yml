@@ -33,8 +33,8 @@ en:
   signup: "Sign up success"
   error: "error"
   signup_title: "Sign up"
-  Title: "Sing Up"
-  confirm: "Confirmation"
+  title: "Sing Up"
+  confirm_pass: "Confirmation"
   status: "The form contains"
   title_page: "BaseApp"
   label_submit: "Create my account"
@@ -56,3 +56,9 @@ en:
   button_chage: "Change"
   all_user: "All User"
   message: "Invalid email/password combination"
+
+  users: "Users"
+  delete: "delete"
+  User deleted: "User deleted"
+  confirm: "You sure?"
+
