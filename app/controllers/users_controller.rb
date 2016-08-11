@@ -1,6 +1,14 @@
 class UsersController < ApplicationController
+  before_action :login_user, only: [:index, :edit, :update]
+  before_action :correct_user, only: [:edit, :update]
+  before_action :load_user, only: [:edit, :update, :show]
+
+  def index
+    @users = User.paginate page: params[:page].oder(creted_at: :desc),
+      recode_per_page: Setting.recode_per_page
+  end
+
   def show
-    @user = User.find_by params[:id]
     if @user.nil?
       flash[:danger] = I18n.t "not_success"
       redirect_to root
@@ -14,10 +22,23 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
+      log_in @user
       flash[:success] = I18n.t "signup"
       redirect_to @user
     else
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @user.update_attributes user_params
+      flash[:success] = I18n.t "update_success"
+      redirect_to @user
+    else
+      render :edit
     end
   end
 
