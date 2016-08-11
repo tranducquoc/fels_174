@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, length: {maximum: 255},
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
 
-  validates :password, presence: true, length: {minimum: 6}
+  validates :password, presence: true, length: {minimum: 6}, allow_nil: true
   before_save :downcase_email
   has_secure_password
 
@@ -23,6 +23,10 @@ class User < ActiveRecord::Base
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
       BCrypt::Engine.cost
       BCrypt::Password.create(string, cost: cost)
+    end
+
+    def is_user? user
+      self == user
     end
 
     def new_token

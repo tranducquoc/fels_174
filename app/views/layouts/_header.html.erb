@@ -32,11 +32,12 @@
             <%= current_user.name  %> <b class="caret"></b>
           </a>
           <ul class="menu-dropdown">
+              <li><%= link_to t("Profile"), current_user %></li>
+              <li><%= link_to t("Settings"), edit_user_path(current_user) %></li>
             <li><%= link_to t("header.signout"), logout_path, method: "delete"  %></li>
           </ul>
         </li>
         <% end %>
       </ul>
-    </nav>
   </div>
 </header>
