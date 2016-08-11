@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
       session_login user
       cookies_remember user
       respond_to do |format|
-        format.json {render json: {result: I18n.t("login.success")}}
+        format.json {render json: {result: I18n.t("login.success"), user: user}}
       end
     else
       respond_to do |format|

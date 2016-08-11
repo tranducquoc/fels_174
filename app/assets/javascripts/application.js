@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap.min
+//= require header_login
 //= require_tree .
