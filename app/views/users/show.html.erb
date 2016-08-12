@@ -4,19 +4,17 @@
 <% end %>
 <div class="row padding-twenty">
   <div class="col-lg-3 padding-zero text-center">
-    <h1><%= @user.name %></h1>
-    <h6><%= t "users.show.learned" %><%= @user.lessons.word_learned %> <%= t "users.show.words" %></h6>
+    <%= render "layouts/user" %>
   </div>
   <div class="col-lg-9 padding-zero">
     <div class="col-lg-12">
       <div class="col-lg-6">
-        <input type="button" value="Words" class="btn btn-primary btn-home max-width">
+        <%= link_to t("users.show.words"), words_path, class: "btn btn-primary btn-home max-width" %>
       </div>
       <div class="col-lg-6">
         <%= link_to t("category.button_lesson"), categories_path,
           class: "btn btn-primary btn-home max-width" %>
       </div>
-
     </div>
     <div class="col-lg-12">
       <h3><%= t "users.show.activities" %></h3>

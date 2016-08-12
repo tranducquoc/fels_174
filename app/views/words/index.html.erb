@@ -1,0 +1,52 @@
+<%= provide :title, current_user.name %>
+<%= content_for :view_specific_css do  %>
+  <%= stylesheet_link_tag "application", "static_page" %>
+<% end %>
+<div class="row padding-twenty">
+  <div class="col-lg-3 padding-zero text-center">
+    <%= render "layouts/user" %>
+  </div>
+  <div class="col-lg-9 padding-zero">
+    <div class="col-lg-12">
+      <h1><%= t "words.index.categories" %></h1>
+    </div>
+    <%= form_tag("", id: "form-submit", method: "get") do %>
+      <div class="col-lg-12 text-center">
+        <%= select_tag( :category_id, options_for_select(@categories
+        .collect{ |category| [category.name, category.id]},
+        params[:category_id]), include_blank: Settings.all,
+        class: "form-control", onChange: "changeSearchData()") %>
+      </div>
+      <div class="col-lg-12 margin-top-10 text-center">
+        <% Settings.word_filter.each do |key, status| %>
+          <%= radio_button_tag :word_filter, status, params[:word_filter] == status, onChange: "changeSearchData()" %>
+          <%= label_tag "word_filter_#{status}", key, class: "font-normal" %>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="col-lg-12 margin-top-10">
+      <table data-toggle="table"
+        data-search="true"
+        data-pagination="true"
+        data-page-size=10
+        data-page-list="[10,20,All]"
+        data-height="500 "
+      >
+        <thead>
+          <tr>
+            <th><%= t "words.index.japanese" %></th>
+            <th><%= t "words.index.vietnamese" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @words.each do |word| %>
+            <tr>
+              <td><%= word.content %></td>
+              <td><%= word.answers.correct.first.content %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
