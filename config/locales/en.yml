@@ -62,3 +62,9 @@ en:
   User deleted: "User deleted"
   confirm: "You sure?"
 
+  category_title: "Categories"
+  list_category: "Category"
+  category_name: "Name"
+  category_id: "STT"
+  categoy_button_start: "Start"
+  button_lesson: "Lesson"
