@@ -3,5 +3,6 @@ class Word < ActiveRecord::Base
   has_many :results, dependent: :destroy
   has_many :answers, dependent: :destroy
   validates :category, presence: true
-end
 
+  scope :random, ->{order("RANDOM()").limit(4)}
+end

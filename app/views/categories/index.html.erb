@@ -1,21 +1,21 @@
-<% provide :title, t("list_category") %>
-<h2> <%= t"category_title" %> </h2>
+<% provide :title, t("category.list_category") %>
+<h2> <%= t"category.category_title" %> </h2>
 <div class="table-responsive table-condensed">
   <table class="table">
     <thead>
       <tr>
-        <th class="index"> <%= t"category_id" %> </th>
-        <th><%= t"category_name" %></th>
+        <th class="index"> <%= t "category.category_id" %> </th>
+        <th><%= t "category.category_name" %></th>
       </tr>
     </thead>
     <tbody>
       <% @categories.each_with_index do |category, index| %>
         <tr>
-          <td><%= index.to_i + 1 %></td>
+          <td><%= index + 1 %></td>
           <td><%= category.name %></td>
           <td>
-            <%= link_to t("categoy_button_start"),
-              "#", method: :post %>
+            <%= link_to t("category.categoy_button_start"),
+              category_path(category), method: :get %>
           </td>
         </tr>
       <% end %>
