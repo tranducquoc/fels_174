@@ -1,0 +1,24 @@
+<% provide :title, t("lesson.lesson_word") %>
+<h2> <%= t"lesson.lesson_word" %> </h2>
+<div class="table-responsive table-condensed">
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="index"> <%= t"lesson.word_id" %> </th>
+        <th><%= t"lesson.word_content" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @words.each_with_index do |word, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= word.content %></td>
+        </tr>
+      <% end %>
+      <td>
+        <input type="button" value="Start" class="btn btn-primary btn-home max-width">
+      </td>
+    </tbody>
+  </table>
+</div>
+</ul>

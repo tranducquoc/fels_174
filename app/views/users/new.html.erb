@@ -1,8 +1,8 @@
-<% provide :title, t("singup_title") %>
+<% provide :title, t("update_profile.singup_title") %>
 <%= content_for :view_specific_css do %>
   <%= stylesheet_link_tag "application", "user", "static_page" %>
 <% end %>
-<h1> <%= t "title" %></h1>
+<h1> <%= t "update_profile.title" %></h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for @user do |f| %>
@@ -13,7 +13,7 @@
       <%= f.email_field :email, class: "form-control" %>
       <%= f.label :password %>
       <%= f.password_field :password, class: "form-control" %>
-      <%= f.label :password_confirmation, t("confirm_pass") %>
+      <%= f.label :password_confirmation, t("update_profile.confirm_pass") %>
       <%= f.password_field :password_confirmation, class: "form-control" %>
       <%= f.submit t("label_submit"), class: "btn btn-primary" %>
     <% end %>
