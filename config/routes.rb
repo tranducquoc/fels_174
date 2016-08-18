@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   get    "login"   => "sessions#new"
   delete  "logout"  =>   "sessions#destroy"
   get "signup"  => "users#new"
+
   resources :users
   resources :categories, only: [:index, :show]
   resources :words, only: [:index]
+  resources :relationships, only: [:create, :destroy, :show]
 end

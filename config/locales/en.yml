@@ -77,3 +77,11 @@ en:
     word_content: "Content"
     not_category: "have not category"
 
+  follow:
+    follow_title: "Follow user"
+    following: "following"
+    followers: "followers"
+    button_follow: "Follow"
+    button_unfollow: "UnFolow"
+    view_profile: "View my profile"
+    not_user: "Not found user"
