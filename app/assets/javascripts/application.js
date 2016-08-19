@@ -17,4 +17,5 @@
 //= require bootstrap-table.min
 //= require header_login
 //= require word_index
+//= require relationships.js
 //= require_tree .
