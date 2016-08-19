@@ -14,5 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap.min
+//= require bootstrap-table.min
 //= require header_login
+//= require word_index
 //= require_tree .

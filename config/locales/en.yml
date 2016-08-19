@@ -11,6 +11,7 @@ en:
     placeholder:
       email : "Enter your email..."
       pass : "Enter your password..."
+    users: "Users"
   login:
     success: "success"
     failed: "failed"
@@ -28,13 +29,17 @@ en:
     show:
       activities: "Activities"
       learned: "Learned "
-      words : " words"
-
+      words : " Words"
+  words:
+    index:
+      japanese: "Japanese"
+      vietnamese: "Vietnamese"
+      categories: "Categories"
   signup: "Sign up success"
   error: "error"
   signup_title: "Sign up"
-  title: "Sing Up"
-  confirm_pass: "Confirmation"
+  Title: "Sing Up"
+  confirm: "Confirmation"
   status: "The form contains"
   title_page: "BaseApp"
   label_submit: "Create my account"
@@ -71,3 +76,4 @@ en:
     word_id: "ID"
     word_content: "Content"
     not_category: "have not category"
+

@@ -1,2 +1,5 @@
 remember: "1"
 record_per_page: 5
+word_filter: {learned: "learned",
+  not_learned: "not_learned", all: "show_all"}
+all : "All"

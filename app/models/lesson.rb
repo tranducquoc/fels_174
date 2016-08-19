@@ -5,5 +5,12 @@ class Lesson < ActiveRecord::Base
   validates :category, presence: true
   has_many :results, dependent: :destroy
   has_many :words, through: :results
-  scope :word_learned, -> {joins(results: :answer).where("answers.is_correct = 't'").count}
+
+  scope :total_learned_words, -> do
+    joins(results: :answer).where("answers.is_correct = 't'").count
+  end
+
+  scope :of_category, -> category_id do
+    where category_id: category_id if category_id.present?
+  end
 end

@@ -1,0 +1,53 @@
+$border-color: #eaeaea;
+$color-shadow: #888888;
+$btn-answers-background-color-hover: #aa5f86;
+$btn-answers-border-color: #8c4a6c;
+$color : black;
+$background-color-true: #24b840;
+$background-color-false: #dd2231;
+.btn-answers {
+  padding: 10px;
+  border: 1px solid $border-color;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 1px 1px 5px $color-shadow ;
+  color: $color;
+}
+.btn-answers:hover {
+  box-shadow: 3px 3px 5px $color-shadow;
+  background-color: $btn-answers-background-color-hover;
+  border-color: $btn-answers-border-color;
+  color: white;
+}
+.margin-top-10 {
+  margin-top: 10px;
+}
+.margin-top-30 {
+  margin-top: 30px;
+}
+.padding-bottom-30 {
+  padding-bottom: 50px;
+}
+.primary-value {
+  color: black;
+}
+.icon-sound {
+  float: left;
+  cursor: pointer;
+}
+.icon-sound:hover {
+  color: black;
+}
+.text-center {
+  text-align: center;
+}
+.answer-true {
+  background-color: $background-color-true;
+  border-color: $background-color-true;
+  color: white;
+}
+.answer-false {
+  background-color: $background-color-false;
+  border-color: $background-color-false;
+  color: white;
+}

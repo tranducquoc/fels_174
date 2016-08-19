@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   delete  "logout"  =>   "sessions#destroy"
   get "signup"  => "users#new"
   resources :users
-  resources :categories
-  resources :words
+  resources :categories, only: [:index, :show]
+  resources :words, only: [:index]
 end
