@@ -35,6 +35,10 @@ en:
       japanese: "Japanese"
       vietnamese: "Vietnamese"
       categories: "Categories"
+  learn_lesson:
+    title: "Learn Lesson"
+    finish : "Finish"
+    finish_failed: "Lesson finish failed"
   signup: "Sign up success"
   error: "error"
   signup_title: "Sign up"

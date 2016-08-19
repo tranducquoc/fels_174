@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   get "signup"  => "users#new"
 
   resources :users
-  resources :categories, only: [:index, :show]
+  resources :categories, only: [:index, :show] do
+    resources :lessons, only: [:edit, :update]
+  end
+  resources :learn_lessons, only: [:new, :update]
   resources :words, only: [:index]
   resources :relationships, only: [:create, :destroy, :show]
 end
