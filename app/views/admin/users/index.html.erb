@@ -1,0 +1,32 @@
+<% provide :title, t("admin.index_delete.title") %>
+<h2><%= t "admin.index_delete.title"  %></h2>
+<div class="table-responsive table-condensed">
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= t "admin.index_delete.id" %></th>
+        <th><%= t "admin.index_delete.avatar" %></th>
+        <th><%= t "admin.index_delete.name" %></th>
+        <th><%= t "admin.index_delete.email" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each.with_index do |user, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= gravatar_for_admin user %></td>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td>
+            <% if current_user.is_admin? && !current_user?(user) %>
+              <%= link_to t("admin.index_delete.view_user"), user %>|
+              <%= link_to t("admin.index_delete.delete_user"), [:admin, user],
+                method: :delete, data: {confirm: t("admin.index_delete.confirm_del")} %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%= will_paginate %>

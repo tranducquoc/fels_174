@@ -89,3 +89,16 @@ en:
     button_unfollow: "UnFolow"
     view_profile: "View my profile"
     not_user: "Not found user"
+
+  admin:
+    index_delete:
+      title: "Delete User"
+      search_user: "Search"
+      bt_search: "Search"
+      id: "ID"
+      avatar: "Avatar"
+      name: "Name"
+      email: "Email"
+      view_user: "View"
+      delete_user: "Delete"
+      confirm_del: "You sure"
