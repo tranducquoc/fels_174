@@ -19,7 +19,7 @@ $('#btnLogin').on('click',function(){
       if('success' === result){
         var user = response.user;
         if(user.is_admin){
-          window.location.href = '/admin/users'
+          window.location.href = '/admin/categories'
         }
         else{
           window.location.href = '/users/'+user.id;
@@ -34,4 +34,3 @@ $('#btnLogin').on('click',function(){
     }
   });
 });
-
