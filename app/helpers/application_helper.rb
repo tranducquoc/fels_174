@@ -8,4 +8,8 @@ module ApplicationHelper
       return page_tile + " | " + base_title
     end
   end
+
+  def increase_one index
+    index + 1
+  end
 end

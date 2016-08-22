@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show] do
     resources :lessons, only: [:edit, :update]
   end
+  resources :results, only: :index
   resources :learn_lessons, only: [:new, :update]
   resources :words, only: [:index]
   resources :relationships, only: [:create, :destroy, :show]
