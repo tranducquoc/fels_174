@@ -3,6 +3,11 @@ class Word < ActiveRecord::Base
   has_many :results, dependent: :destroy
   has_many :answers, dependent: :destroy
   validates :category, presence: true
+  validates :content, presence: true
+  validates :sound, presence: true
+  accepts_nested_attributes_for :answers,
+    reject_if: proc {|attributes| attributes[:content].blank?}
+
   scope :not_in_ids, -> ids {where.not id: ids}
 
   scope :of_category, -> category_id do

@@ -13,8 +13,11 @@ Rails.application.routes.draw do
   resources :learn_lessons, only: [:new, :update]
   resources :words, only: [:index]
   resources :relationships, only: [:create, :destroy, :show]
+
   namespace :admin do
     resources :users, only: [:index, :show, :destroy]
-    resources :categories, only: :index
+    resources :categories, only: :index do
+      resources :words
+    end
   end
 end
