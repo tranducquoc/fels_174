@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users, only: [:index, :show, :destroy]
-    resources :categories, only: :index do
+    resources :categories do
       resources :words
     end
   end

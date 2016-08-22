@@ -1,6 +1,6 @@
 <% provide :title, t("admin.category.title") %>
 <h2><%= t "admin.category.title" %></h2>
-<div class="table-responsive table-condensed admin-category">
+<div class="table-responsive table-condensed">
   <table class="table">
     <thead>
       <tr>
@@ -14,12 +14,16 @@
           <td><%= index + 1 %></td>
           <td><%= category.name %></td>
           <td>
+            <%= link_to t("admin.category.show_category"), "#" %>
+          </td>
+          <td>
           <%= link_to t("admin.category.edit_category"),
-            "#", class: "glyphicon glyphicon-pencil" %>
+            edit_admin_category_path(category) %>
           </td>
           <td>
           <%= link_to t("admin.category.delete_category"),
-            "#", class: "glyphicon glyphicon-trash" %>
+            [:admin, category], method: :delete,
+            data: {confirm: t("admin.category.confirm_delete")} %>
           </td>
         </tr>
       <% end %>
