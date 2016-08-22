@@ -102,3 +102,10 @@ en:
       view_user: "View"
       delete_user: "Delete"
       confirm_del: "You sure"
+
+    category:
+      title: "Categories"
+      category_id: "ID"
+      category_name: "Categoty Name"
+      edit_category: "Edit"
+      delete_category: "Delete"
