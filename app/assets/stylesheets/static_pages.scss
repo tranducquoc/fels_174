@@ -6,6 +6,8 @@ $border-color: #eaeaea;
 $color: #90949c;
 $color-menu: #00897b;
 $color-shadow: #888888;
+$color-green: #24b840;
+$color-red: #dd2231;
 html {
   height: 100%;
 }
@@ -134,4 +136,17 @@ footer {
 /*word list*/
 .font-normal {
   font-weight: normal;
+}
+
+/*result page*/
+/*index*/
+.color-success {
+  color: $color-green;
+}
+.color-failed {
+  color: $color-red;
+}
+
+.text-right {
+  text-align: right;
 }

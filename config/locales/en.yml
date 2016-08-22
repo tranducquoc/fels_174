@@ -39,6 +39,7 @@ en:
     title: "Learn Lesson"
     finish : "Finish"
     finish_failed: "Lesson finish failed"
+    continue_learn: "Continue"
   signup: "Sign up success"
   error: "error"
   signup_title: "Sign up"

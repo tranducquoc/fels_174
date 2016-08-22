@@ -8,7 +8,7 @@ class LessonsController < ApplicationController
   def update
     @lesson = Lesson.find_by id: params[:id]
     if @lesson.update(lesson_params)
-      redirect_to categories_path
+      redirect_to results_path lesson_id: params[:id]
     else
       flash[:danger] = t "learn_lesson.finish_failed"
       render edit_category_lesson_path
