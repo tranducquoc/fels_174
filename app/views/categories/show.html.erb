@@ -1,4 +1,7 @@
 <% provide :title, t("lesson.lesson_word") %>
+<%= content_for :view_specific_css do  %>
+  <%= stylesheet_link_tag "application", "user", "static_page" %>
+<% end %>
 <h2> <%= t"lesson.lesson_word" %> </h2>
 <div class="table-responsive table-condensed">
   <table class="table">
