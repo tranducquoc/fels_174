@@ -4,8 +4,20 @@
     root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right" id="menu-top">
-        <li><%= link_to t("header.home"), root_url %></li>
-        <li><%= link_to t("update_profile.users"), users_path %></li>
+        <li>
+          <%= link_to root_url do %>
+            <span class="glyphicon glyphicon-home">
+              <%= t "header.home" %>
+            </span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to users_path do %>
+            <span class="glyphicon glyphicon-equalizer">
+              <%= t "update_profile.users" %>
+            </span>
+          <% end %>
+        </li>
         <% if !logged_in? %>
         <li><%= link_to t("header.signup"), signup_path %></li>
         <li><a id="show-form-login"><%= t "header.signin"  %> </a>
@@ -14,28 +26,48 @@
               <h6 class="color-red" id="message-err"></h6>
             </div>
             <div class="col-lg-12">
-              <input type="text" class="form-control" id="email" placeholder="<%= t "header.placeholder.email" %>">
+              <input type="text" class="form-control" id="email"
+                placeholder="<%= t "header.placeholder.email" %>">
             </div>
             <div class="col-lg-12">
-              <input type="password" class="form-control" id="password" placeholder="<%= t "header.placeholder.pass"  %>">
+              <input type="password" class="form-control" id="password"
+                placeholder="<%= t "header.placeholder.pass"  %>">
             </div>
             <div class="col-lg-12">
-              <input type="checkbox" id="remember"><h6><%= t "header.remember"  %></h6>
+              <input type="checkbox" id="remember"><h6><%= t "header.remember" %></h6>
             </div>
             <div class="col-lg-12">
-              <input type="button" value=<%= t "header.login"  %> class="btn btn-primary max-width" id="btnLogin">
+              <input type="button" value=<%= t "header.login"  %>
+                class="btn btn-primary max-width" id="btnLogin">
             </div>
           </div>
         </li>
         <% else %>
         <li>
           <a href="">
-            <%= current_user.name  %> <b class="caret"></b>
+            <span class="glyphicon glyphicon-user">
+              <%= current_user.name  %> <b class="caret"></b>
+            </span>
           </a>
           <ul class="menu-dropdown">
-              <li><%= link_to t("Profile"), current_user %></li>
-              <li><%= link_to t("Settings"), edit_user_path(current_user) %></li>
-            <li><%= link_to t("header.signout"), logout_path, method: "delete"  %></li>
+              <li>
+                <%= link_to current_user do %>
+                  <span class="glyphicon glyphicon-new-window">
+                    <%= t "Profile" %>
+                  </span>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to edit_user_path(current_user) do %>
+                  <span class="glyphicon glyphicon-cog"> <%= t "Settings" %></span>
+                <% end %>
+              </li>
+            <li><%= link_to logout_path, method: "delete" do %>
+                <span class="glyphicon glyphicon-log-out">
+                  <%= t "header.signout" %>
+                </span>
+              <% end %>
+            </li>
           </ul>
         </li>
         <% end %>

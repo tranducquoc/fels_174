@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   def login_user
     unless logged_in?
       flash[:danger] = t "not_login"
-      redirect_to login_url
+      redirect_to root_url
     end
   end
 

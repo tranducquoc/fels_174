@@ -65,7 +65,7 @@ h6 {
 #menu-top a {
   color: white;
 }
-#menu-top li:hover{
+#menu-top > li:hover{
   background-color: #004D40;
 }
 
@@ -94,17 +94,29 @@ h6 {
   width: 150px;
   list-style: none;
   display: none;
-  background-color: $color-menu;
+  background-color: white;
   padding: 0px;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px $color-shadow;
 }
 .menu-dropdown li {
   padding: 10px;
+  border-bottom: 1px solid white;
 }
-.menu-dropdown li a {
+#menu-top .menu-dropdown li a {
   display: block;
   width: 100%;
   height: 100%;
+  color: $color-menu;
 }
+.menu-dropdown li:hover {
+  background-color: $color-menu;
+}
+#menu-top .menu-dropdown li:hover a {
+  color: white;
+}
+
 #menu-top li:hover .menu-dropdown {
   display: block;
 }
@@ -165,4 +177,21 @@ footer {
 }
 .margin-top-20 {
   margin-top: 20px;
+}
+.padding-left-10 {
+  padding-left: 10px;
+}
+.right-menu {
+  list-style: none;
+  padding: 0px;
+  height: 300px;
+  border: 1px solid $border-color;
+   box-shadow: 2px 2px 5px $color-shadow;
+}
+.right-menu li {
+  padding: 5px;
+  border-bottom: 1px solid $border-color;
+}
+.right-menu li:hover a{
+  text-decoration: none;
 }

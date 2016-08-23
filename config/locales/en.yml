@@ -148,5 +148,8 @@ en:
       update_success: "Updated"
       update_fail: "Fail"
       bt_save: "Save"
-
+    manage:
+      users: "Manage Users"
+      categories: "Manage Categories"
+      words: "Manage Words"
 

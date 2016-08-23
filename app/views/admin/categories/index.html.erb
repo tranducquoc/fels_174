@@ -1,4 +1,7 @@
 <% provide :title, t("admin.category.title") %>
+<%= content_for :view_specific_css do  %>
+  <%= stylesheet_link_tag "application", "user", "static_page" %>
+<% end %>
 <h2><%= t "admin.category.title" %></h2>
 <div class="form">
   <div class="form-group">
@@ -19,7 +22,8 @@
           <td><%= index + 1 %></td>
           <td><%= category.name %></td>
           <td>
-            <%= link_to t("admin.category.show_category"), "#" %>
+            <%= link_to t("admin.category.show_category"),
+              admin_category_words_path(category_id: category.id) %>
           </td>
           <td>
           <%= link_to t("admin.category.edit_category"),
