@@ -34,3 +34,17 @@ $('#btnLogin').on('click',function(){
     }
   });
 });
+$(document).ready(function(){
+  var answers = $(".answers");
+  function clearChoice(){
+    for(var i=0; i<answers.length; i++){
+      $(answers[i]).prop("checked", false);
+    }
+  }
+  for(var i=0; i<answers.length; i++){
+    $(answers[i]).on("click",function(){
+      clearChoice();
+      $(this).prop("checked", true);
+    });
+  }
+});
