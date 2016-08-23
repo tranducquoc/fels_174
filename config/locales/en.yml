@@ -110,6 +110,18 @@ en:
       show_category: "Show"
       edit_category: "Edit"
       delete_category: "Delete"
+      confirm_delete: "You sure?"
+      exists_category: "Not category"
+      edit_title: "Edit Category"
+      delete_success: "deleted"
+      delete_fail: "don't delete"
+      update_success: "Updated"
+      update_fail: "Fail"
+      bt_save: "Save"
+      bt_new: "New category"
+      new_title: "New Category"
+      create_success: "Category created"
+
     words:
       title: "Manage Words"
       new: "New word"

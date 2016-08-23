@@ -1,5 +1,10 @@
 <% provide :title, t("admin.category.title") %>
 <h2><%= t "admin.category.title" %></h2>
+<div class="form">
+  <div class="form-group">
+    <%= link_to t("admin.category.bt_new"), new_admin_category_path, class: "button" %>
+  </div>
+</div>
 <div class="table-responsive table-condensed">
   <table class="table">
     <thead>

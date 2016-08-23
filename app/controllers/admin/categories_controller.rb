@@ -1,11 +1,25 @@
 class Admin::CategoriesController < ApplicationController
   before_action :login_user, only: :index
-  before_action :verify_admin, only: [:index, :edit, :update, :destroy]
+  before_action :verify_admin, only: [:index, :new, :edit, :update, :destroy]
   before_action :load_category, only: [:edit, :update, :destroy]
 
   def index
     @categories = Category.paginate page: params[:page],
       per_page: Settings.record_per_page
+  end
+
+  def new
+    @category = Category.new
+  end
+
+  def create
+    @category = Category.new category_params
+    if @category.save
+      flash[:success] = t "admin.category.create_success"
+      redirect_to admin_categories_path
+    else
+      render :new
+    end
   end
 
   def edit
