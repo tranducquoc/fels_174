@@ -134,6 +134,19 @@ en:
         edit: "Edit"
         delete: "Delete"
         confirm_delete: "You sure ?"
+        export_csv: "Export CSV"
+        export_xls: "Export XLS"
+      export:
+        word:
+          id: "ID"
+          content: "Content"
+          sound: "Sound"
+          category_id: "CategoryID"
+        answer:
+          id: "ID"
+          content: "Content"
+          is_correct: "Is_correct"
+          word_id: "WordID"
       edit:
         success: "update success"
         failed: "Edit has occur error, update failed !"

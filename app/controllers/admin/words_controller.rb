@@ -5,6 +5,11 @@ class Admin::WordsController < ApplicationController
   def index
     @words = Word.of_category params[:category_id]
     @category = Category.find_by params[:category_id]
+    respond_to do |format|
+      format.html
+      format.csv {send_data @words.to_csv}
+      format.xls
+    end
   end
 
   def new
