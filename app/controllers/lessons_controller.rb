@@ -1,6 +1,22 @@
 class LessonsController < ApplicationController
   before_action :login_user, only: [:edit, :update]
 
+  def new
+
+  end
+
+  def create
+    @category = Category.find_by id: params[:category_id]
+    @lesson = Lesson.create category: @category, user: current_user
+    @words = @category.words.random
+    if @lesson
+      @words.each do |word|
+        Result.create word: word, lesson: @lesson
+      end
+      redirect_to edit_category_lesson_path(@category.id,@lesson)
+    end
+  end
+
   def edit
     @lesson = Lesson.find_by id: params[:id]
   end

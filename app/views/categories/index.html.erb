@@ -1,4 +1,7 @@
 <% provide :title, t("category.list_category") %>
+<%= content_for :view_specific_css do  %>
+  <%= stylesheet_link_tag "application", "user","static_page" %>
+<% end %>
 <h2> <%= t"category.category_title" %> </h2>
 <div class="table-responsive table-condensed">
   <table class="table">
@@ -15,7 +18,7 @@
           <td><%= category.name %></td>
           <td>
             <%= link_to t("category.categoy_button_start"),
-              category_path(category), method: :get %>
+              category_lessons_path(category), method: :post%>
           </td>
         </tr>
       <% end %>

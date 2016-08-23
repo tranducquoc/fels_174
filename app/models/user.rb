@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: {minimum: 6}, allow_nil: true
   before_save :downcase_email
   has_secure_password
-
+  scope :search, ->(keyword) {where("name LIKE ?", "%#{keyword}%")}
   default_scope {order("created_at DESC")}
 
   class << self

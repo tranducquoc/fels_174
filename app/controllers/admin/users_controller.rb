@@ -4,7 +4,7 @@ class Admin::UsersController < ApplicationController
   before_action :verify_admin, only: [:index, :show, :destroy]
 
   def index
-    @users = User.paginate page: params[:page],
+    @users = User.search(params[:search]).paginate page: params[:page],
       per_page: Settings.record_per_page
   end
 

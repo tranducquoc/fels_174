@@ -3,25 +3,16 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1><%= link_to @user.name, @user %></h1>
+      <%= gravatar_for @user, size: 50 %>
       <%= render "shared/stats" %>
-      <%= image_tag @user.avatar.url if @user.avatar? %>
     </section>
   </aside>
   <div class="col-md-4">
     <h3><%= t "follow.follow_title" %></h3>
     <% @users.each do |following| %>
       <div>
-        <%= image_tag following.avatar.url if following.avatar? %>
+        <%= gravatar_for @user, size: 50 %>
         <%= link_to following.name, following %>
-      </div>
-    <% end %>
-  </div>
-  <div class="col-md-4">
-    <h3><%= t "follow.follow_title" %></h3>
-    <% @users.each do |follower| %>
-      <div>
-        <%= image_tag follower.avatar.url if follower.avatar? %>
-        <%= link_to follower.name, follower %>
       </div>
     <% end %>
   </div>

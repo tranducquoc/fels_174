@@ -1,4 +1,7 @@
 <% provide :title, t("admin.category.new_title") %>
+<%= content_for :view_specific_css do  %>
+  <%= stylesheet_link_tag "application", "user","static_page" %>
+<% end %>
 <% provide :button_title, t("admin.category.bt_save") %>
 <h2><%= t "admin.category.new_title" %></h2>
 <div class="row">
