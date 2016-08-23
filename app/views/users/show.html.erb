@@ -6,7 +6,6 @@
   <div class="col-lg-3 padding-zero text-center">
     <%= render "layouts/user" %>
     <h1><%= @user.name %></h1>
-    
     <%= render "shared/stats" %>
     <%= render "follow_form" if logged_in? %>
   </div>

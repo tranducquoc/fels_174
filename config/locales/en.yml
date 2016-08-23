@@ -134,6 +134,12 @@ en:
         edit: "Edit"
         delete: "Delete"
         confirm_delete: "You sure ?"
+      edit:
+        success: "update success"
+        failed: "Edit has occur error, update failed !"
+      delete:
+        success: "word has been delete !"
+        failed: "can not delete this word, please check before delete !"
       confirm_delete: "You sure?"
       exists_category: "Not category"
       edit_title: "Edit Category"
@@ -142,3 +148,5 @@ en:
       update_success: "Updated"
       update_fail: "Fail"
       bt_save: "Save"
+
+
