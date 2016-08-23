@@ -39,12 +39,19 @@ $(document).ready(function(){
   function clearChoice(){
     for(var i=0; i<answers.length; i++){
       $(answers[i]).prop("checked", false);
+      $(answers[i]).val("false");
     }
   }
   for(var i=0; i<answers.length; i++){
     $(answers[i]).on("click",function(){
       clearChoice();
       $(this).prop("checked", true);
+      $(this).val("true");
     });
   }
+  $("#form-word").on("click",function(){
+    for(var i=0; i<answers.length; i++){
+      $(answers[i]).prop("checked", true);
+    }
+  });
 });
