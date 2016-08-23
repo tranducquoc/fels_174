@@ -26,4 +26,15 @@ class Word < ActiveRecord::Base
   end
 
   scope :random, ->{order("RANDOM()").limit(4)}
+
+  class << self
+    def to_csv options = {}
+      CSV.generate(options) do |csv|
+        csv << column_names
+        all.each do |word|
+          csv << word.attributes.values_at(*column_names)
+        end
+      end
+    end
+  end
 end
